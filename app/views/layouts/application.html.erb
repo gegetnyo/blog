@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="header">
+        <h1 class="grid-6"><a href="/">Blog</a></h1>
+        <% if user_signed_in? %>
+            <span><%= current_user.email %>でログイン中
+                <ul>
+                  <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+                  <%= link_to "New", new_sentence_path, class: 'get' %>
+                </ul>
+            </span>
+        <% else %>
+          <div class="grid-6">
+            <%= link_to "Sign In", new_user_session_path, class: 'post' %>
+            <%= link_to "SIgn Up", new_user_registration_path, class: 'post' %>
+          </div>
+        <% end %>
+      </div>
+    </header>
+
+
+    <%= yield %>
+  </body>
+</html>

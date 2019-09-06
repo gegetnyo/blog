@@ -1,0 +1,11 @@
+<ul>
+    <%= simple_format(@sentences.text) %>
+    
+    <% if user_signed_in? && current_user.id == @sentences.user_id %>
+    <%= link_to 'EDIT', "/sentences/#{@sentences.id}/edit", method: :get %>
+    <%= link_to 'DESTROY', "sentences/#{@sentences.id}", method: :delete, data: { confirm: '削除しますか？'} %>
+    <% end %>
+    
+</ul>
+
+

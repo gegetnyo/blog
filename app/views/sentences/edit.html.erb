@@ -1,0 +1,9 @@
+<div>
+  <%= form_tag("/sentences/#{@sentences.id}", method: :patch) do %>
+    <h3>
+      EDIT
+    </h3>
+    <textarea name="text" placeholder="text" rows="10" cols="30"><%= @sentences.text %></textarea>
+    <input type="submit" value="SEND">
+  <% end %>
+</div>

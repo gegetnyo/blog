@@ -1,0 +1,23 @@
+<div>
+  <ul>
+    <%= sentence.text %>
+      <ul>
+        <%= link_to 'SHOW', "sentences/#{sentence.id}/", method: :get %>
+      <% if user_signed_in? && current_user.id == sentence.user_id %>
+        <%= link_to 'EDIT', "sentences/#{sentence.id}/edit", method: :get %>
+        <%= link_to 'DESTROY', "sentences/#{sentence.id}", method: :delete, data: { confirm: '削除しますか？'} %>
+      </ul>
+    <% end %>
+  </ul>
+</div>
+
+
+
+  
+<!--< simple_format(tweet.text) %>
+  <span class="name">
+      <a href="">
+        <span>投稿者</span>< tweet.user.nickname %>
+      </a>
+    </span>
+</div> -->
