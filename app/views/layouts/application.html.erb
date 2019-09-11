@@ -5,30 +5,39 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Noto+Serif+JP&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+<!-- ここからbody -->
   <body>
-    <header class="header">
-        <h1 class="grid-6"><a href="/">Blog</a></h1>
-        <% if user_signed_in? %>
-            <span><%= current_user.email %>でログイン中
-                <ul>
-                  <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-                  <%= link_to "New", new_sentence_path, class: 'get' %>
-                </ul>
-            </span>
-        <% else %>
-          <div class="grid-6">
-            <%= link_to "Sign In", new_user_session_path, class: 'post' %>
-            <%= link_to "SIgn Up", new_user_registration_path, class: 'post' %>
-          </div>
-        <% end %>
-      </div>
-    </header>
+    <div class="header">
+          <h1><a href="/" class="link">Blog</a></h1>
+              <% if user_signed_in? %>
+                <span class = "login">
+                    <div class ="user"><%= current_user.email %>でログイン中</div>
+                    <div class ="link"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></div>
+                    <div class ="link"><%= link_to "New", new_sentence_path, class: 'get' %></div>
+                </span>
+              <% else %>
+                <span class = "logout">
+                    <div class = "link"><%= link_to "Sign In", new_user_session_path, class: 'post' %></div>
+                    <div class = "link"><%= link_to "SIgn Up", new_user_registration_path, class: 'post' %></div>
+                </span>
+              <% end %>
+              
 
-
+    </div>
+    
+    
+    <div class="contents">
     <%= yield %>
+    </div>
+    
+    <div class="footer">
+    </div>
+    
   </body>
 </html>

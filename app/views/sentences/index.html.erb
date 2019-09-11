@@ -1,6 +1,9 @@
-<div class="contents row">
-  <% @sentences.each do |sentence| %>
+<div class = contents_high>
+   <%= link_to 'Calendar', "sentences/calendar",class: "button3", method: :get %>
+<% @sentences.each do |sentence| %>
+  <div class="contents_row">
     <%= render partial: "sentence", locals: {sentence: sentence} %>
+  </div>
   <% end %>
   <%= paginate(@sentences) %>
 </div>

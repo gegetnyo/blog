@@ -1,11 +1,11 @@
 <div>
-  <ul>
+  <ul class = "button1">
     <%= sentence.text %>
-      <ul>
-        <%= link_to 'SHOW', "sentences/#{sentence.id}/", method: :get %>
+      <ul class = "button2">
+        <%= link_to 'SHOW', "sentences/#{sentence.id}/",class: "button3", method: :get %>
       <% if user_signed_in? && current_user.id == sentence.user_id %>
-        <%= link_to 'EDIT', "sentences/#{sentence.id}/edit", method: :get %>
-        <%= link_to 'DESTROY', "sentences/#{sentence.id}", method: :delete, data: { confirm: '削除しますか？'} %>
+        <%= link_to 'EDIT', "sentences/#{sentence.id}/edit",class: "button3", method: :get %>
+        <%= link_to 'DESTROY', "sentences/#{sentence.id}",class: "button3", method: :delete, data: { confirm: '削除しますか？'} %>
       </ul>
     <% end %>
   </ul>

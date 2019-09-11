@@ -1,3 +1,210 @@
-// Place all the styles related to the sentences controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+	font-family: 'Noto Serif JP', serif;
+	font-size: 100%;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 70px;
+  background-color: #c9f0b6;
+}
+
+.contents {
+  height: calc(100% - 120px);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: scroll;
+}
+
+.footer {
+  height: 50px;
+  background-color: #c9f0b6;
+}
+
+span.login {
+ display: flex;
+ justify-content: flex-end;
+}
+
+span.logout{
+  display: flex;
+  justify-content: flex-end;
+}
+
+span.login >:first-child{
+  margin-right: auto;
+}
+
+.link {
+  margin: 0 30px;
+}
+
+
+div.contents_row{
+  background-color: #ffffff;
+  width: 600px;
+
+  border-radius: 5px;
+  margin: 10px auto;
+  padding: 5px;
+  border-left: 1px solid #a8a8a8;
+  border-bottom: 1px solid #787878;
+  border-top: 1px solid #d6d6d6;
+  border-right: 1px solid #bababa;
+}
+
+div.contents_high{
+  padding: 10px;
+}
+
+ul.button1 {
+  display: flex;
+  flex-direction: column;
+}
+
+ul.button2 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+a.button3{
+  margin: 0 8px;
+  background-color: #c9f0b6;
+  border: 1px solid #c9f0b6;
+  border-radius: 2px;
+  color: #9d69ff;
+  box-shadow: 1px 1px;
+}
+
+div.contents2{
+  height: calc(100vh - 120px);
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  border-left: 1px solid #a8a8a8;
+  border-bottom: 1px solid #787878;
+  border-top: 1px solid #d6d6d6;
+  border-right: 1px solid #bababa;
+  position: relative;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+ul.button4 {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+h2 {
+  color: #9d69ff;
+  text-align: center;
+}
+
+.content3 {
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+}
+
+.content4 {
+  display: flex;
+  width: calc(100vw - 80px);
+  height: calc(100vh - 220px);
+  border-left: 1px solid #a8a8a8;
+  border-bottom: 1px solid #787878;
+  border-top: 1px solid #d6d6d6;
+  border-right: 1px solid #bababa;
+  position: relative;
+  border-radius: 5px;
+  padding: 5px;
+
+}
+
+.submit {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.submit2 {
+  display: flex;
+  background-color: #c9f0b6;
+  border: 1px solid #c9f0b6;
+  border-radius: 2px;
+  color: #9d69ff;
+  box-shadow: 1px 1px;
+}
+
+.content5{
+  margin: auto;
+}
+
+.new_user {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: calc(100vw - 920px);
+  margin: auto;
+  border-left: 1px solid #a8a8a8;
+  border-bottom: 1px solid #787878;
+  border-top: 1px solid #d6d6d6;
+  border-right: 1px solid #bababa;
+  position: relative;
+  border-radius: 5px;
+  padding: 5px;
+  
+}
+
+
+.field input {
+  border-left: 1px solid #a8a8a8;
+  border-bottom: 1px solid #787878;
+  border-top: 1px solid #d6d6d6;
+  border-right: 1px solid #bababa;
+  position: relative;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.actions {
+  background-color: #c9f0b6;
+  border: 1px solid #c9f0b6;
+  border-radius: 2px;
+  color: #9d69ff;
+  box-shadow: 1px 1px;
+  width: 60px;
+  margin: 10px;
+}
+
+.field_r{
+  display: flex;
+  justify-content: center;
+}
+
+.field {
+  text-align: center;
+}
+
+.log_in{
+  position: absolute;
+  right: 40px;
+  top: 300px;
+}
+
+.sign_up{
+  position: absolute;
+  right: 40px;
+  top: 250px;
+}
+
+.f_pass{
+  position: absolute;
+  right: 40px;
+  top: 280px;
+}

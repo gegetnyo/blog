@@ -3,7 +3,7 @@ class SentencesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   
   def index
-    @sentences = Sentence.all.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    @sentences = Sentence.all.includes(:user).order("updated_at DESC").page(params[:page]).per(5)
   end
   
   def new
@@ -40,6 +40,10 @@ class SentencesController < ApplicationController
       sentence.destroy
       redirect_to action: 'index'
     end
+  end
+  
+  def calendar
+    @meetings = Sentence.where.not(start_time: nil)
   end
 
   

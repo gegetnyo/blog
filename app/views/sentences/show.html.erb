@@ -1,11 +1,13 @@
-<ul>
+<div class = "contents2" >
+<ul class = "button1">
+
     <%= simple_format(@sentences.text) %>
     
+    <ul class = "button4">
     <% if user_signed_in? && current_user.id == @sentences.user_id %>
-    <%= link_to 'EDIT', "/sentences/#{@sentences.id}/edit", method: :get %>
-    <%= link_to 'DESTROY', "sentences/#{@sentences.id}", method: :delete, data: { confirm: '削除しますか？'} %>
+    <%= link_to 'EDIT', "/sentences/#{@sentences.id}/edit",class: "button3", method: :get %>
+    <%= link_to 'DESTROY', "sentences/#{@sentences.id}",class: "button3", method: :delete, data: { confirm: '削除しますか？'} %>
     <% end %>
-    
+    </ul>
 </ul>
-
-
+</div>
