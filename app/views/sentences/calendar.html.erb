@@ -1,0 +1,32 @@
+
+<div class = "warapper clearfix">
+
+<div class = "month_calendar">
+<%= month_calendar events: @meetings do |date, meetings| %>
+  <%= date.to_formatted_s(:defaulta) %>
+
+  <% meetings.each do |meeting| %>
+    <div>
+      <%= meeting.text %>
+    </div>
+  <% end %>
+<% end %>
+</div>
+
+
+<div class = "week_calendar">
+<%= week_calendar events: @meetings do |date, meetings| %>
+  <%= date.to_formatted_s(:defaulta) %>
+
+  <% meetings.each do |meeting| %>
+    <div>
+      <%= meeting.text %>
+    </div>
+  <% end %>
+<% end %>
+</div>
+
+</div>
+
+<!-- http://excid3.github.io/simple_calendar/を参考に
+<!-- https://webliker.info/75964/

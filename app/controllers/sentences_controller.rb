@@ -44,6 +44,7 @@ class SentencesController < ApplicationController
   
   def calendar
     @meetings = Sentence.where.not(start_time: nil)
+
   end
 
   
