@@ -1,14 +1,14 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view %>
+    <%= link_to t('simple_calendar.previous', default: '<<'), calendar.url_for_previous_view %>
+    
     <% if calendar.number_of_weeks == 1 %>
-      <span class="calendar-title">Week <%= calendar.week_number %></span>
+      <span class="calendar-title"><%= start_date.year %>年 <%= start_date.month %>月<%= @n_week %> 週目</span>
     <%else%>
         <span class="calendar-title">Week <%= calendar.week_number %> - <%= calendar.end_week %></span>
     <%end%>
-        <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view %>
+        <%= link_to t('simple_calendar.next', default: '>>'), calendar.url_for_next_view %>
   </div>
-
   <table class="table table-striped">
     <thead>
       <tr>
@@ -25,6 +25,14 @@
             <%= content_tag :td, class: calendar.td_classes_for(day) do %>
               <% if defined?(Haml) && respond_to?(:block_is_haml?) && block_is_haml?(block) %>
                 <% capture_haml(day, sorted_events.fetch(day, []), &block) %>
+                  <table>
+                  <tr class = "nantoko">
+                    <th>都道府県</th>
+                    <th>面積</th>
+                    <th>人口</th>
+                    <th>人口密度</th>
+                  </tr>
+                  </table>
               <% else %>
                 <% block.call day, sorted_events.fetch(day, []) %>
               <% end %>

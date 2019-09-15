@@ -6,7 +6,7 @@
 # db      => "2014-10-01 00:00:00"
 
 # カスタムフォーマットを定義
-Date::DATE_FORMATS[:defaulta]      = "%m月%d日"
+Date::DATE_FORMATS[:defaulta]      = "%-m月%-d日"
 
 
 #https://ruby-rails.hatenadiary.com/entry/20141226/1419600679
